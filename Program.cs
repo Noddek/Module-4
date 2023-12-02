@@ -32,6 +32,35 @@
             bool C2 = (A2 < B2) || (X2 > Y2);
             Console.WriteLine("\tIs the condition met? - {0}.", C2);
 
+            Console.WriteLine("\nComparing & and && :");
+            var a = 5 + 6;
+            var b = 7 + 8;
+            var c = (b != a) & (b > a + 1);
+            var d = (b != a) && (b > a + 1);
+            var e = (b == a) & (b > a + 1);
+            var f = (b == a) && (b > a + 1);
+            Console.WriteLine("\t" + c);
+            Console.WriteLine("\t" + d);
+            Console.WriteLine("\t" + e);
+            Console.WriteLine("\t" + f);
+
+            Console.WriteLine("\nTesting XOR :");
+            var a1 = 6;
+            var b1 = 7;
+            var c1 = (a1 > b1) ^ (a1 != b1);
+            Console.WriteLine("\tResult: " + c1);
+
+            Console.WriteLine("\nTesting logical negation. Task 4.1.10:");
+            var inv = true;
+            var negationResult = !inv;
+            Console.WriteLine("\tNegation result: " + negationResult);
+
+
+
+
+
+
+
 
             Console.ReadKey();
 
