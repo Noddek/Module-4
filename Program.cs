@@ -20,9 +20,11 @@
                 (isLeapYear && (currentDayInYear >= 336 || currentDayInYear <= 60)); // The outer brackets can be removed
             Console.WriteLine("\tIs it winter? - {0}.", isWinter);
 
-
-
-
+            Console.WriteLine("\nTask 4.1.4. Comparing variables of string type.");
+            string A = "";
+            string B = "";
+            bool C = (A != B); // The outer brackets can be removed
+            Console.WriteLine("\tIsn't A equal to B? - {0}.", C);
 
 
 
