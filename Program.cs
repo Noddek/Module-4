@@ -61,7 +61,7 @@ namespace BasicConstructions
             bool invertedVar = !trueVar;
             bool lastVar = !invertedVar;
 
-            Console.WriteLine("\nSelection statements (conditional statements) if-else. ");
+            Console.WriteLine("\nSelection statements (conditional statements): if-else. ");
             var a2 = 6;
             var b2 = 7;
 
@@ -145,6 +145,42 @@ namespace BasicConstructions
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine("\tOK, your color is cyan!");
             }
+
+            Console.WriteLine("\nSelection statement (conditional statement): switch.");
+            Console.WriteLine("\nTask 4.1.18. Color selection with switch.");
+            Console.Write("\tPlease write your favorite color with a small letter: ");
+            var color1 = Console.ReadLine();
+            switch (color1)
+                // We could have just written: switch (Console.ReadLine()), without using the variable color1.
+            {
+                case "red":
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.WriteLine("\tOK, your color is red!");
+                    break;
+                        // The 'break' operator is mandatory. Instead of it we can use 'goto case', 'return', 'throw'.
+                        // return - jump statement; terminates execution of the function in which it appears and returns control and the function's result, if any, to the caller.
+                        // goto case - to transfer control to a switch section with a constant case label.
+                        // goto default; - to transfer control to the switch section with the default label.
+                        // throw - throws an exception.
+                case "green":
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor= ConsoleColor.Black;
+                    Console.WriteLine("\tOK, your color is green!");
+                    break;
+                case "cyan":
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.WriteLine("\tOK, your color is cyan!");
+                    break;
+                default:
+                    // The block 'default' can be omitted.
+                    Console.BackgroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\tOK, your colors are yellow and red!");
+                    break;
+            }
+
 
 
 
