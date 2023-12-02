@@ -1,4 +1,6 @@
-﻿namespace BasicConstructions
+﻿using static System.Collections.Specialized.BitVector32;
+
+namespace BasicConstructions
 {
     internal class Program
     {
@@ -54,11 +56,71 @@
             var inv = true;
             var negationResult = !inv;
             Console.WriteLine("\tNegation result: " + negationResult);
+            bool trueVar = true;
+            bool invertedVar = !trueVar;
+            bool lastVar = !invertedVar;
 
+            Console.WriteLine("\nSelection statements (conditional statements) if-else. ");
+            var a2 = 6;
+            var b2 = 7;
 
+            // 1st way:
+            Console.WriteLine("\t\t1st way:");
+            if (a2 == b2)
+            {
+                Console.WriteLine("\tThe condition is true.");
+            }
+            else
+            {
+                Console.WriteLine("\tThe condition is false.");
+                
+                if (b2 < 10) Console.WriteLine("\tThe value of the variable b2 is {0}.", b2); // If there is only one line of code after the condition, curly braces can be omitted.
 
+                if (b2 < 10)
+                { 
+                    Console.WriteLine("\tThe value of the variable b2 is {0} and less than 10.", b2); 
+                }
+                else
+                {
+                    Console.WriteLine("\tThe value of the variable b2 is {0} and greater than 10.", b2);
+                }
+            }
 
+            // 2nd way:
+            Console.WriteLine("\t\t2nd way:");
+            if (a2 == b2)
+            {
+                Console.WriteLine("\tThe condition is true.");
+            }
+            else if (b2 < 10)
+            {
+                Console.WriteLine("\tThe value of the variable b2 is {0} and less than 10.", b2);
+            }
+            else
+            {
+                Console.WriteLine("\tThe value of the variable b2 is {0} and greater than 10.", b2);
+            }
 
+            // 3rd way:
+            Console.WriteLine("\t\t3rd way:");
+            if (a2 == b2 && b2 > 1)
+            {
+                Console.WriteLine("\tThe condition is true.");
+            }
+            else if (b2 > 10 || b2 == 7)
+            {
+                Console.WriteLine("\tThe value of the variable b2 is {0}, greater than 10 or equal to 7.", b2);
+            }
+            else
+            {
+                Console.WriteLine("\tThe value of the variable b2 is {0}", b2);
+            }
+
+            Console.WriteLine("\nTernary operation (or ternary operator).");
+            var a3 = 6;
+            var b3 = 7;
+            var c3 = a3 != b3 ? a3 + b3 : b3;
+            Console.WriteLine("\tResult of ternary operation: " + c3);
 
 
 
