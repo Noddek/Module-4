@@ -1,4 +1,5 @@
-﻿using static System.Collections.Specialized.BitVector32;
+﻿using System.Net.WebSockets;
+using static System.Collections.Specialized.BitVector32;
 
 namespace BasicConstructions
 {
@@ -121,6 +122,31 @@ namespace BasicConstructions
             var b3 = 7;
             var c3 = a3 != b3 ? a3 + b3 : b3;
             Console.WriteLine("\tResult of ternary operation: " + c3);
+
+
+            Console.WriteLine("\nTask 4.1.17. A program about colors to reinforce skills.");
+            Console.Write("\tPlease write your favorite color with a small letter: ");
+            var color = Console.ReadLine();
+            if (color == "red")
+            {
+                Console.BackgroundColor = ConsoleColor.Red; //A property of the console background color that our data has.
+                Console.ForegroundColor = ConsoleColor.Black; //A property of the font color.
+                Console.WriteLine("\tOK, your color is red!");
+            }
+            else if (color == "green")
+            {
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("\tOK, your color is green!");
+            }
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.Cyan;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("\tOK, your color is cyan!");
+            }
+
+
 
 
 
