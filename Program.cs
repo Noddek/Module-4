@@ -427,7 +427,8 @@ namespace BasicConstructions
             while (t < 4);
             */
 
-            Console.WriteLine("\nTask 4.2.13. Difference between 'while' and 'do...while'.");
+            Console.WriteLine("\nTask 4.2.13. Difference between 'while' and 'do...while'. [COMMENTED]");
+            /*
             Console.WriteLine("\tCycle 'while':");
             int k1 = 0;
             while (k1 < 0)
@@ -491,14 +492,112 @@ namespace BasicConstructions
                 t1++;
             }
             while (t1 < 0);
+            */
 
+            Console.WriteLine("\nInfinite cycle 'while' with user-controlled stop: [COMMENTED]");
+            /*
+            int k2 = 0;
+            while (true)
+            {
+                Console.WriteLine("\tIteration " + k2);
+                Console.Write("\tPlease write your favorite color with a small letter: ");
+                var text = Console.ReadLine();
+                if (text == "stop")
+                {
+                    Console.WriteLine("\t\tCycle is stopped.");
+                    break;
+                }
+                switch (text)
+                {
+                    case "red":
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("\tOK, your color is red!");
+                        break;
+                    case "green":
+                        Console.BackgroundColor = ConsoleColor.Green;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("\tOK, your color is green!");
+                        break;
+                    case "cyan":
+                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("\tOK, your color is cyan!");
+                        break;
+                    default:
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("\tOK, your color is yellow!");
+                        break;
+                }
+                k2++;
+            }
+            */
+
+            Console.WriteLine("\nInfinite cycle 'while' with user-controlled stop and the 'continue' operator: [COMMENTED]");
+            /*
+            int k3 = 0;
+            while (true)
+            {
+                Console.WriteLine("\tIteration " + k3);
+                Console.Write("\tPlease write your favorite color with a small letter: ");
+                var text = Console.ReadLine();
+                if (text == "stop")
+                {
+                    Console.WriteLine("\t\tCycle is stopped.");
+                    break;
+                }
+                switch (text)
+                {
+                    case "red":
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("\tOK, your color is red!");
+                        break;
+                    case "green":
+                        Console.BackgroundColor = ConsoleColor.Green;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("\tOK, your color is green!");
+                        break;
+                    case "cyan":
+                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("\tOK, your color is cyan!");
+                        break;
+                    default:
+                        continue;
+                }
+                k3++;
+            }
+            */
+
+            Console.WriteLine("\nThe task of summing positive numbers:");
+            int sum = 0;
+            while (true)
+            {
+                Console.Write("\tEnter the summand: ");
+                var summand = Convert.ToInt32(Console.ReadLine());
+                if (summand < 0)
+                {
+                    Console.WriteLine("\t\tEnter a positive number, or 0 to exit the program.");
+                    continue;
+                }
+                else if (summand == 0) 
+                {
+                    Console.WriteLine("\t\tThe summation has been stopped.");
+                    break;
+                }
+                sum += summand; // We sum only positive numbers.
+            }
+            Console.WriteLine("\tSum total: " + sum);
+            
 
 
 
             Console.WriteLine("\n");
             Console.WriteLine("\n");
             Console.WriteLine("\n");
-            Console.WriteLine("\n");
+
             Console.ReadKey();
 
         }
