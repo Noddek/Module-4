@@ -662,6 +662,18 @@ namespace BasicConstructions
             }
             Console.WriteLine("\tThe MIN element of the array has index {0} and its value is {1}.", minIndex, minValue);
 
+            Console.WriteLine("\nAn example of spelling words out.");
+            Console.Write("\tEnter your name: ");
+            string yourName = Console.ReadLine();
+            Console.Write("\tYour name is spelled");
+            foreach (var letter in yourName)
+            {
+                Console.Write(" " + letter);
+            }
+            Console.Write(", and the last letter is {0}.", yourName[yourName.Length - 1]);
+
+
+
 
 
             Console.WriteLine("\n");
