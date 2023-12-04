@@ -662,7 +662,8 @@ namespace BasicConstructions
             }
             Console.WriteLine("\tThe MIN element of the array has index {0} and its value is {1}.", minIndex, minValue);
 
-            Console.WriteLine("\nAn example of spelling words out.");
+            Console.WriteLine("\nAn example of spelling words out. [COMMENTED]");
+            /*
             Console.Write("\tEnter your name: ");
             string yourName = Console.ReadLine();
             Console.Write("\tYour name is spelled");
@@ -671,8 +672,10 @@ namespace BasicConstructions
                 Console.Write(" " + letter);
             }
             Console.Write(", and the last letter is {0}.\n", yourName[yourName.Length - 1]);
+            */
 
-            Console.WriteLine("\nTask 4.3.7. Rearrange the letters of a name in reverse order.");
+            Console.WriteLine("\nTask 4.3.7. Rearrange the letters of a name in reverse order. [COMMENTED]");
+            /*
             Console.Write("\tEnter your name: ");
             string yourName1 = Console.ReadLine();
             Console.Write("\tYour name in reverse:");
@@ -680,8 +683,74 @@ namespace BasicConstructions
             {
                 Console.Write(" " + yourName1[i]);
             }
+            */
+
+            Console.WriteLine("\n\n1-dimensional array:");
+            int[] array1D = new int[] { 1, 2, 3 };
+            Console.Write("\tAll elements of the 1D array through foreach cycle:");
+            foreach (var element in array1D)
+            {
+                Console.Write(" " + element);
+            }
+            Console.WriteLine("\n\tThe 1D array length: " + array1D.Length);
+            Console.WriteLine("\tChecking the GetUpperBound(0) for 1D array: " + array1D.GetUpperBound(0));
+            
+
+            Console.WriteLine("\n\n2-dimensional array:");
+            int[,] array2D = new int [4,3] { { 10, 20, 30 }, { 40, 50, 60 }, { 70, 80, 90 }, { 100, 110, 120 } };
+            Console.WriteLine("\tThe element with index [0,0]: " + array2D[0, 0]);
+            Console.Write("\tAll elements of the 2D array through foreach cycle:");
+            foreach (var element in array2D)
+            {
+                Console.Write(" " + element);
+            }
+            Console.WriteLine("\n\tThe 2D array length: " + array2D.Length);
+            Console.WriteLine("\tChecking the GetUpperBound(0) for 2D array: " + array2D.GetUpperBound(0));
+            Console.WriteLine("\tChecking the GetUpperBound(1) for 2D array: " + array2D.GetUpperBound(1));
+            Console.WriteLine("\tPossible number of table rows for 2D array: " + (array2D.GetUpperBound(0) + 1));
+            Console.WriteLine("\tPossible number of table columns for 2D array: " + (array2D.GetUpperBound(1) + 1));
+            Console.WriteLine("\tCreating the table using two embedded cycles 'for':");
+            for (int i = 0; i <= array2D.GetUpperBound(0); i++)
+            {
+                Console.Write("\t\t");
+                for (int k = 0; k <= array2D.GetUpperBound(1); k++)
+                {
+                    Console.Write(array2D[i, k] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("\tTask 4.3.11. Create a table by swapping rows and columns.");
+            for (int i = 0; i <= array2D.GetUpperBound(1); i++)
+            {
+                Console.Write("\t\t");
+                for (int k = 0; k <= array2D.GetUpperBound(0); k++)
+                {
+                    Console.Write(array2D[k, i] + " ");
+                }
+                Console.WriteLine();
+            }
 
 
+            Console.WriteLine("\n\n3-dimensional array:");
+            int[,,] array3D = new int[2, 4, 2] { { { 10, 11 }, { 20, 21 }, { 30, 31 }, { 35, 36 } }, { { 40, 41 }, { 50, 51 }, { 60, 61 }, { 65, 66 } } };
+            Console.Write("\tAll elements of the 3D array through foreach cycle:");
+            foreach (var element in array3D)
+            {
+                Console.Write(" " + element);
+            }
+            Console.WriteLine("\n\tThe 3D array length: " + array3D.Length);
+            Console.WriteLine("\tChecking the GetUpperBound(0) for 3D array: " + array3D.GetUpperBound(0));
+            Console.WriteLine("\tChecking the GetUpperBound(1) for 3D array: " + array3D.GetUpperBound(1));
+            Console.WriteLine("\tChecking the GetUpperBound(2) for 3D array: " + array3D.GetUpperBound(2));
+
+
+
+
+
+
+            Console.WriteLine("\n");
+            Console.WriteLine("\n");
+            Console.WriteLine("\n");
             Console.WriteLine("\n");
             Console.WriteLine("\n");
             Console.WriteLine("\n");
