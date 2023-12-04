@@ -670,13 +670,18 @@ namespace BasicConstructions
             {
                 Console.Write(" " + letter);
             }
-            Console.Write(", and the last letter is {0}.", yourName[yourName.Length - 1]);
+            Console.Write(", and the last letter is {0}.\n", yourName[yourName.Length - 1]);
+
+            Console.WriteLine("\nTask 4.3.7. Rearrange the letters of a name in reverse order.");
+            Console.Write("\tEnter your name: ");
+            string yourName1 = Console.ReadLine();
+            Console.Write("\tYour name in reverse:");
+            for (int i = yourName1.Length - 1; i >= 0; i--)
+            {
+                Console.Write(" " + yourName1[i]);
+            }
 
 
-
-
-
-            Console.WriteLine("\n");
             Console.WriteLine("\n");
             Console.WriteLine("\n");
             Console.WriteLine("\n");
