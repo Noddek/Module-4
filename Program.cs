@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.Metrics;
 using System.Net.WebSockets;
 using static System.Collections.Specialized.BitVector32;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BasicConstructions
 {
@@ -19,7 +20,7 @@ namespace BasicConstructions
             Console.WriteLine("\nFinding out if it's winter or not:");
             int currentDayInYear = 293;
             bool isLeapYear = false;
-            bool isWinter = 
+            bool isWinter =
                 (!isLeapYear && (currentDayInYear >= 335 || currentDayInYear <= 59)) // The outer brackets can be removed
                 ||
                 (isLeapYear && (currentDayInYear >= 336 || currentDayInYear <= 60)); // The outer brackets can be removed
@@ -76,12 +77,12 @@ namespace BasicConstructions
             else
             {
                 Console.WriteLine("\tThe condition is false.");
-                
+
                 if (b2 < 10) Console.WriteLine("\tThe value of the variable b2 is {0}.", b2); // If there is only one line of code after the condition, curly braces can be omitted.
 
                 if (b2 < 10)
-                { 
-                    Console.WriteLine("\tThe value of the variable b2 is {0} and less than 10.", b2); 
+                {
+                    Console.WriteLine("\tThe value of the variable b2 is {0} and less than 10.", b2);
                 }
                 else
                 {
@@ -186,7 +187,7 @@ namespace BasicConstructions
                     break;
             }
             */
-            
+
             Console.WriteLine("\n\nMODULE 4.2. Iteration statements (cycles).");
             Console.WriteLine("\nColor change cycle. [COMMENTED.]");
             /*
@@ -225,7 +226,7 @@ namespace BasicConstructions
             {
                 Console.WriteLine("\ti = " + i);
             }
-            
+
             Console.WriteLine("\nCycle with long i:");
             for (long i = 0; i < 10; i++)
             {
@@ -240,7 +241,7 @@ namespace BasicConstructions
             }
 
             Console.WriteLine("\nCycle with counter change in the cycle body:");
-            for (int i = 0; i < 5; )
+            for (int i = 0; i < 5;)
             {
                 Console.WriteLine("\ti = " + i);
                 i++;
@@ -571,7 +572,8 @@ namespace BasicConstructions
             }
             */
 
-            Console.WriteLine("\nThe task of summing positive numbers:");
+            Console.WriteLine("\nThe task of summing positive numbers: [COMMENTED]");
+            /*
             int sum = 0;
             while (true)
             {
@@ -590,14 +592,82 @@ namespace BasicConstructions
                 sum += summand; // We sum only positive numbers.
             }
             Console.WriteLine("\tSum total: " + sum);
-            
+            */
+
+            Console.WriteLine("\n\nMODULE 4.3. Arrays.");
+            Console.WriteLine("\nA program with several favorite colors. [COMMENTED]");
+            /*
+            string[] favoriteColors = new string[3];
+            for (int i = 0; i < favoriteColors.Length; i++)
+            {
+                Console.Write("\tPlease write your favorite color number {0} with a small letter: ", i + 1);
+                favoriteColors[i] = Console.ReadLine();
+            }
+            foreach (var color in favoriteColors)
+            {
+                switch (color)
+                {
+                    case "red":
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("\tOK, your color is red!");
+                        break;
+                    case "green":
+                        Console.BackgroundColor = ConsoleColor.Green;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("\tOK, your color is green!");
+                        break;
+                    case "cyan":
+                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("\tOK, your color is cyan!");
+                        break;
+                    default:
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("\tOK, your color is yellow!");
+                        break;
+                }
+            }
+            */
+
+            Console.WriteLine("\nAn example with initializing an array and determining its length.");
+            int[] arr1 = new int[5] { 1, 2, 4, 8, 16 };
+            int[] arr2 = new int[] { 10, 15, 20, 25, 30, 35 };
+            int[] arr3 = new[] { 1, 3, 5, 7, 11, 13 };
+            int[] arr4 = { 2, 4, 6, 8, 10, 12, 14 };
+            Console.WriteLine("\tThe length of array 'arr1': {0}", arr1.Length);
+            Console.WriteLine("\tThe length of array 'arr2': {0}", arr2.Length);
+            Console.WriteLine("\tThe length of array 'arr3': {0}", arr3.Length);
+            Console.WriteLine("\tThe length of array 'arr4': {0}", arr4.Length);
+
+            Console.WriteLine("\nSearch for a MIN in an array and display its value and index.");
+            Random randomNumber = new Random();
+            var numbers = new int[] { randomNumber.Next(1, 100), randomNumber.Next(1, 100), randomNumber.Next(1, 100), randomNumber.Next(1, 100), randomNumber.Next(1, 100), randomNumber.Next(1, 100) };
+            Console.WriteLine("\tArray length: " + numbers.Length);
+            Console.WriteLine("\tGenerated random numbers of the array:");
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.WriteLine("\t\t{0} index: {1}", i, numbers[i]);
+            }
+            int minValue = numbers[0];
+            int minIndex = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] < minValue)
+                {
+                    minValue = numbers[i];
+                    minIndex = i;
+                }
+            }
+            Console.WriteLine("\tThe MIN element of the array has index {0} and its value is {1}.", minIndex, minValue);
 
 
 
             Console.WriteLine("\n");
             Console.WriteLine("\n");
             Console.WriteLine("\n");
-
+            Console.WriteLine("\n");
             Console.ReadKey();
 
         }
