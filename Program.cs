@@ -887,11 +887,23 @@ namespace BasicConstructions
             // ----------------------> Task 4.3.12. SF method. END.
 
 
+            Console.WriteLine("\nTask 4.3.13. Find the sum of all elements of the array. - My method.");
+            var U1 = new int[] { 5, 6, 9, 1, 2, 3, 4 }; // Initial Unsorted array
+                                                        // var U1 = new int[] { -100, 5, 3, 6, 1, 9, 1, 1, 2, -150, 1, -150, 2, 3, 4, 7, 4, 4 };
+            var sum = 0; // Result: sum of all array elements
+            Console.Write("\tUnsorted array: ");
+            foreach (var element in U1)
+            {
+                Console.Write(element + " ");
+            }
+            Console.WriteLine("\n\tUnsorted array length: " + U1.Length);
+            for (int i = 0; i < U1.Length; i++) 
+            {
+                sum += U1[i];
+            }
+            Console.WriteLine("\tSum of all array elements: " + sum);
 
-
-
-
-
+            
 
 
 
