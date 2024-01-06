@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.Metrics;
+﻿using Microsoft.VisualBasic;
+using System.Diagnostics.Metrics;
 using System.Net.WebSockets;
 using static System.Collections.Specialized.BitVector32;
 using static System.Net.Mime.MediaTypeNames;
@@ -730,7 +731,6 @@ namespace BasicConstructions
                 Console.WriteLine();
             }
 
-
             Console.WriteLine("\n\n3-dimensional array:");
             int[,,] array3D = new int[2, 4, 2] { { { 10, 11 }, { 20, 21 }, { 30, 31 }, { 35, 36 } }, { { 40, 41 }, { 50, 51 }, { 60, 61 }, { 65, 66 } } };
             Console.Write("\tAll elements of the 3D array through foreach cycle:");
@@ -744,11 +744,122 @@ namespace BasicConstructions
             Console.WriteLine("\tChecking the GetUpperBound(2) for 3D array: " + array3D.GetUpperBound(2));
 
 
+            // ----------------------> Task 4.3.12. START.
+
+            Console.WriteLine("\nTask 4.3.12. Sort a 1D array in ascending order.");
+            Console.WriteLine(">>> MY LAST TRY - NEW SORTING METHOD:");
+            var U = new int[] { -100, 5, 3, 6, 1, 9, 1, 1, 2, -150, 1, -150, 2, 3, 4, 7, 4, 4 }; // Initial Unsorted array with repeats
+            var S = new int[U.Length]; // Result: Sorted array with repeats
+            var sortingIteration = 0; // General iteration number of sorting.
+            var lastMinIndex = 0; // Current last minimum index in U
+            var lastMinValue = U[lastMinIndex]; // Current last minimum value in U
+            var tempMinIndex = -1; // Variable for temporary saving indices of interim minimums during the search in U
+            var tempMinValue = U[lastMinIndex]; // Variable for temporary saving values of interim minimums during the search in U
+            var lastMinCounter = 0; // Number of repetitions of the last minimum in U
+            var lastSortedArrayIndex = -1; // Index of the last recorded element in S (recording will be in ascending order of indices, without skipping)
+            var tempSortedArrayIndex = -1; // Variable for temporary saving some indexes of S
+            Console.Write("\tUnsorted array: ");
+            foreach (var element in U)
+            {
+                Console.Write(element + " ");
+            }
+            Console.WriteLine("\n\tUnsorted array length: " + U.Length);
+            while (lastSortedArrayIndex < S.Length - 1)
+            {
+                sortingIteration++;
+                Console.WriteLine("\n>>> Sorting. General iteration number: " + sortingIteration);
+                // 1. Find the minimum
+                Console.WriteLine("1. Loop to find the minimum.");
+                for (int i = 0; i < U.Length; i++)
+                {
+                    if ((lastSortedArrayIndex < 0) && (U[i] <= tempMinValue)) // 1.1. To find the first minimum value
+                    {
+                        tempMinIndex = i;
+                        tempMinValue = U[i];
+                        Console.WriteLine("\tChanges: tempMinIndex is {0}, tempMinValue is {1}", tempMinIndex, tempMinValue);
+                    }
+                    else if ((lastSortedArrayIndex >= 0) && (U[i] > lastMinValue) && (U[i] <= tempMinValue)) // 1.2. To find the next minimums
+                    {
+                        tempMinIndex = i;
+                        tempMinValue = U[i];
+                        Console.WriteLine("\tChanges: tempMinIndex is {0}, tempMinValue is {1}", tempMinIndex, tempMinValue);
+                    }
+                }
+                lastMinIndex = tempMinIndex;
+                lastMinValue = tempMinValue;
+                Console.WriteLine("\tChanges: lastMinIndex is {0}, lastMinValue is {1}", lastMinIndex, lastMinValue);
+                // 2. Set new values for the variables 'tempMinIndex' and 'tempMinValue'.
+                Console.WriteLine("2. Loop to set new values for the variables 'tempMinIndex' and 'tempMinValue'.");
+                for (int i = 0; i < U.Length; i++)
+                {
+                    if (U[i] > lastMinValue)
+                    {
+                        tempMinIndex = i;
+                        tempMinValue = U[i];
+                        Console.WriteLine("\tChanges: tempMinIndex is {0}, tempMinValue is {1}", tempMinIndex, tempMinValue);
+                        break;
+                    }
+                    else if (i == (U.Length - 1))
+                    {
+                        Console.WriteLine("\ttempMinIndex and tempMinValue are not changed.");
+                        Console.WriteLine("\ttempMinIndex == lastMinIndex ? - " + (tempMinIndex == lastMinIndex));
+                        Console.WriteLine("\ttempMinValue == lastMinValue ? - " + (tempMinValue == lastMinValue));
+                        Console.WriteLine("\tIt should be last general iteration!");
+                    }
+                }
+                // 3. Count the amount of elements that are equal to the last minimum value. Use a counter. 
+                Console.WriteLine("3. Loop to count the amount of elements that are equal to the last minimum value.");
+                for (int i = 0; i < U.Length; i++)
+                {
+                    if (U[i] == lastMinValue)
+                    {
+                        lastMinCounter++;
+                        Console.WriteLine("\tChanges: lastMinCounter is {0}", lastMinCounter);
+                    }
+                }
+                // 4. Write the found amount of elements with the minimum value to the sorted array. At the end, reset the counter.
+                Console.WriteLine("4. Loop to write the found amount of elements with the minimum value to the sorted array.");
+                while (lastMinCounter > 0)
+                {
+                    for (int i = lastSortedArrayIndex + 1; i < lastSortedArrayIndex + 1 + lastMinCounter; i++)
+                    {
+                        S[i] = lastMinValue;
+                        tempSortedArrayIndex = i;
+                    }
+                    Console.Write("\tSorted array is changed to: ");
+                    foreach (var element in S)
+                    {
+                        Console.Write(element + " ");
+                    }
+                    lastSortedArrayIndex = tempSortedArrayIndex;
+                    Console.WriteLine("\n\tChanges: lastSortedArrayIndex is " + lastSortedArrayIndex);
+                    lastMinCounter = 0;
+                    Console.WriteLine("\tChanges: lastMinCounter is " + lastMinCounter);
+                }
+            }
+            Console.WriteLine("\nLoop WHILE for sorting is finished.\nTask 4.3.12 is completed (my method).");
+
+            // ----------------------> Task 4.3.12. END.
 
 
 
 
-            Console.WriteLine("\n");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             Console.WriteLine("\n");
             Console.WriteLine("\n");
             Console.WriteLine("\n");
