@@ -744,7 +744,7 @@ namespace BasicConstructions
             Console.WriteLine("\tChecking the GetUpperBound(2) for 3D array: " + array3D.GetUpperBound(2));
 
 
-            // ----------------------> Task 4.3.12. START.
+            // ----------------------> Task 4.3.12. My method. START.
 
             Console.WriteLine("\nTask 4.3.12. Sort a 1D array in ascending order.");
             Console.WriteLine(">>> MY LAST TRY - NEW SORTING METHOD:");
@@ -839,13 +839,52 @@ namespace BasicConstructions
             }
             Console.WriteLine("\nLoop WHILE for sorting is finished.\nTask 4.3.12 is completed (my method).");
 
-            // ----------------------> Task 4.3.12. END.
+            // ----------------------> Task 4.3.12. My method. END.
 
+            
+            // ----------------------> Task 4.3.12. SF method. START.
 
+            Console.WriteLine("\nTask 4.3.12. Sort a 1D array in ascending order. SF method: swap positions of elements.");
+            var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 }; // Initial Unsorted array
+            Console.Write("Initial Unsorted array: ");
+            foreach (var item in arr)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine("\nUnsorted array length: " + arr.Length);
+            int temp;
+            int totalInterations = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                totalInterations++;
+                Console.WriteLine("\tIteration number: i = {0}", i);
+                for (int k = i + 1; k < arr.Length; k++)
+                {
+                    totalInterations++;
+                    Console.WriteLine("\t\tk = {0}", k);
+                    if (arr[i] > arr[k])
+                    {
+                        temp = arr[i];
+                        arr[i] = arr[k];
+                        arr[k] = temp;
+                        Console.WriteLine("\t\tChanges: temp = {0} -> arr[{1}] = {2} -> arr[{3}] = {4}", temp, i, arr[i], k, arr[k]);
+                        Console.Write("\t\tSorted array is changed to: ");
+                        foreach (var item in arr)
+                        {
+                            Console.Write(item + " ");
+                        }
+                        Console.WriteLine();
+                    }
+                }
+            }
+            Console.Write("\nSorted array: ");
+            foreach (var item in arr)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine("\nTotal number of iterations: " + totalInterations);
 
-
-
-
+            // ----------------------> Task 4.3.12. SF method. END.
 
 
 
