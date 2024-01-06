@@ -903,12 +903,46 @@ namespace BasicConstructions
             }
             Console.WriteLine("\tSum of all array elements: " + sum);
 
-            
 
+            Console.WriteLine("\n\nJagged array (array of arrays) using the example of an array containing strings in its elements:");
+            var favouriteColorsJ = new string[] { "red color", "green", "cyan" };
+            Console.Write("\n\tElements of the external (main) array:\n\t\t| ");
+            foreach (var color in favouriteColorsJ)
+            {
+                Console.Write(color + " | ");
+            }
+            Console.WriteLine("\n\n\tElements of the internal (secondary) arrays:");
+            foreach (var color in favouriteColorsJ)
+            {
+                Console.Write("\t\t" + color + ": | ");
+                int counter = 0;
+                foreach (var item in color)
+                {
+                    counter++;
+                    Console.Write(item + " | ");
+                }
+                Console.Write(" -> number of elements: {0} (counter) or {1} (color.Length)", counter, color.Length);
+                Console.WriteLine();
+            }
 
-
-
-
+            Console.WriteLine("\nInitialization of an array of arrays:");
+            int[][] arrayOfArrays = new int[3][];
+            arrayOfArrays[0] = new int[2] { 1, 2 };
+            arrayOfArrays[1] = new int[3] { 1, 2, 3 };
+            arrayOfArrays[2] = new int[5] { 1, 2, 3, 4, 5 };
+            Console.WriteLine("\nTask 4.3.14. Go through the elements of the array of arrays by analogy with an array of strings.");
+            int counterOfArrays = 0;
+            foreach (var array in arrayOfArrays)
+            {
+                counterOfArrays++;
+                Console.Write("\tArray {0}: | ", counterOfArrays);
+                foreach (var subarray in array)
+                {
+                    Console.Write(subarray + " | ");
+                }
+                Console.Write(" -> number of elements: {0} (array.Length)", array.Length);
+                Console.WriteLine();
+            }
 
 
             Console.WriteLine("\n");
