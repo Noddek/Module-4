@@ -944,6 +944,36 @@ namespace BasicConstructions
                 Console.WriteLine();
             }
 
+            Console.WriteLine("\nTask 4.3.15. Find the amount of positive numbers.");
+            int[] numericArray = { -5, 0, 6, -50, 2, 4, -5, -50, 2 }; // Initial array with repeats
+            int positiveElements = 0; // The amount of positive numbers
+            Console.Write("\tElements of the initial array: ");
+            foreach (var number in numericArray)
+            {
+                Console.Write(number + " | ");
+            }
+            // My method:
+            foreach (var number in numericArray)
+            {
+                if (number > 0)
+                {
+                    positiveElements++;
+                }
+            }
+            Console.WriteLine("\n\tThe amount of positive numbers (my method): " + positiveElements);
+            // SF method:
+            positiveElements = 0;
+            for (int i = 0; i < numericArray.Length; i++)
+            {
+                if (numericArray[i] > 0) 
+                {
+                    positiveElements++;
+                }
+            }
+            Console.WriteLine("\tThe amount of positive numbers (SF method): " + positiveElements);
+
+
+
 
             Console.WriteLine("\n");
             Console.WriteLine("\n");
