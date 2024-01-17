@@ -947,7 +947,7 @@ namespace BasicConstructions
             Console.WriteLine("\nTask 4.3.15. Find the amount of positive numbers.");
             int[] numericArray = { -5, 0, 6, -50, 2, 4, -5, -50, 2 }; // Initial array with repeats
             int positiveElements = 0; // The amount of positive numbers
-            Console.Write("\tElements of the initial array: ");
+            Console.Write("\tElements of the initial array: | ");
             foreach (var number in numericArray)
             {
                 Console.Write(number + " | ");
@@ -971,6 +971,38 @@ namespace BasicConstructions
                 }
             }
             Console.WriteLine("\tThe amount of positive numbers (SF method): " + positiveElements);
+
+            Console.WriteLine("\nTask 4.3.16. Find the amount of positive numbers in 2D-array.");
+            int[,] numeric2DArray = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } }; // Initial 2D-array with repeats
+            int positiveElements2D = 0; // The amount of positive numbers in the 2D-array
+            Console.Write("\tElements of the initial 2D-array: | ");
+            foreach (var number in numeric2DArray)
+            {
+                Console.Write(number + " | ");
+            }
+            // My method:
+            foreach (var number in numeric2DArray)
+            {
+                if (number > 0)
+                {
+                    positiveElements2D++;
+                }
+            }
+            Console.WriteLine("\n\tThe amount of positive numbers in 2D-array (my method): " + positiveElements2D);
+            // SF method:
+            positiveElements2D = 0;
+            for (int i = 0; i <= numeric2DArray.GetUpperBound(0); i++)
+            {
+                for (int k = 0; k <= numeric2DArray.GetUpperBound(1); k++)
+                {
+                    if (numeric2DArray[i, k] > 0)
+                    {
+                        positiveElements2D++;
+                    }
+                }
+            }
+            Console.WriteLine("\tThe amount of positive numbers in 2D-array (SF method): " + positiveElements2D);
+
 
 
 
