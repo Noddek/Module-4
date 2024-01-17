@@ -930,6 +930,8 @@ namespace BasicConstructions
             arrayOfArrays[0] = new int[2] { 1, 2 };
             arrayOfArrays[1] = new int[3] { 1, 2, 3 };
             arrayOfArrays[2] = new int[5] { 1, 2, 3, 4, 5 };
+            
+            
             Console.WriteLine("\nTask 4.3.14. Go through the elements of the array of arrays by analogy with an array of strings.");
             int counterOfArrays = 0;
             foreach (var array in arrayOfArrays)
@@ -943,6 +945,7 @@ namespace BasicConstructions
                 Console.Write(" -> number of elements: {0} (array.Length)", array.Length);
                 Console.WriteLine();
             }
+
 
             Console.WriteLine("\nTask 4.3.15. Find the amount of positive numbers.");
             int[] numericArray = { -5, 0, 6, -50, 2, 4, -5, -50, 2 }; // Initial array with repeats
@@ -971,6 +974,7 @@ namespace BasicConstructions
                 }
             }
             Console.WriteLine("\tThe amount of positive numbers (SF method): " + positiveElements);
+
 
             Console.WriteLine("\nTask 4.3.16. Find the amount of positive numbers in 2D-array.");
             int[,] numeric2DArray = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } }; // Initial 2D-array with repeats
@@ -1004,7 +1008,39 @@ namespace BasicConstructions
             Console.WriteLine("\tThe amount of positive numbers in 2D-array (SF method): " + positiveElements2D);
 
 
-
+            Console.WriteLine("\nTask 4.3.17. Sorting of 2D-array - sorting within the last dimension");
+            Console.Write("\tElements of the initial 2D-array: | ");
+            foreach (var number in numeric2DArray)
+            {
+                Console.Write(number + " | ");
+            }
+            // My method (SF method is the same):
+            int tempValue = 0;
+            for (int i = 0; i <= numeric2DArray.GetUpperBound(0); i++)
+            {
+                for (int k = 0; k <= numeric2DArray.GetUpperBound(1); k++)
+                {
+                    for (int l = k + 1; l <= numeric2DArray.GetUpperBound(1); l++)
+                    {
+                        if (numeric2DArray[i,k] > numeric2DArray[i, l])
+                        {
+                            tempValue = numeric2DArray[i, k];
+                            numeric2DArray[i, k] = numeric2DArray[i, l];
+                            numeric2DArray[i, l] = tempValue;
+                        }
+                    }
+                }
+            }
+            Console.Write("\n\tSorted 2D-array:\n\t\t");
+            for (int i = 0; i <= numeric2DArray.GetUpperBound(0); i++)
+            {
+                for (int k = 0; k <= numeric2DArray.GetUpperBound(1); k++)
+                {
+                    Console.Write(numeric2DArray[i,k] + " | ");
+                }
+                Console.Write("\n\t\t");
+            }
+            
 
 
             Console.WriteLine("\n");
