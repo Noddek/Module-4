@@ -1040,6 +1040,20 @@ namespace BasicConstructions
                 }
                 Console.Write("\n\t\t");
             }
+
+
+            Console.WriteLine("\n\nMODULE 4.4. Tuples.");
+            Console.WriteLine("\nExample of a tuple.");
+            var exampleOfTuple = (name: "Jane", age: 27);
+            Console.WriteLine("\tYour name: {0} ({1})", exampleOfTuple.name, exampleOfTuple.Item1);
+            Console.WriteLine("\tYour age: {0} ({1})", exampleOfTuple.age, exampleOfTuple.Item2);
+            (string name, int age) anketa;
+            Console.WriteLine("\nTask 4.4.2. A program for recording user's personal information in tuple anketa.");
+            Console.Write("\tEnter you name: ");
+            anketa.name = Console.ReadLine();
+            Console.Write("\tEnter you age: ");
+            anketa.age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\tRecorded data: name '{0}', age '{1}'.", anketa.name, anketa.age);
             
 
 
