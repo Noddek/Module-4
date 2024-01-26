@@ -1098,6 +1098,51 @@ namespace BasicConstructions
             Console.WriteLine("\tThe length of the pet's name: {0}", Pet.NameCount);
             */
 
+            Console.WriteLine("\n\nMODULE 4.5. Training workshop.[COMMENTED]");
+            /*
+            Console.WriteLine("\tGeneral task: User survey.");
+            Console.WriteLine("\tTask 4.5.1. Declare a tuple User.");
+            (string Name, string Surname, string Login, int LoginLength, bool HasPet, double Age, string[] favcolors) User;
+            Console.WriteLine("\tTask 4.5.6. Make the survey repeat for 3 users.");
+            int numberOfUsers = 3;
+            for (j = 1; j <= numberOfUsers; j++)
+            {
+                Console.WriteLine("\tTask 4.5.2. Key in data for Name, Surname, Login.");
+                Console.Write("\tEnter the your name: ");
+                User.Name = Console.ReadLine();
+                Console.Write("\tEnter your surname: ");
+                User.Surname = Console.ReadLine();
+                Console.Write("\tEnter your login: ");
+                User.Login = Console.ReadLine();
+                Console.WriteLine("\tTask 4.5.3. Calculate user login length.");
+                User.LoginLength = User.Login.Length;
+                Console.WriteLine("\tTask 4.5.4. Write a yes-no condition for the pet.");
+                Console.Write("\tDo you have a pet? Yes or No: ");
+                string answerPet = Console.ReadLine();
+                if (answerPet == "Yes" || answerPet == "yes")
+                {
+                    User.HasPet = true;
+                }
+                else
+                {
+                    User.HasPet = false;
+                }
+                Console.WriteLine("\tTask 4.5.5. Write code to enter the user's age and three favorite colors.");
+                Console.Write("\tEnter your age: ");
+                User.Age = Convert.ToDouble(Console.ReadLine());
+                //SF variant: User.Age = double.Parse(Console.ReadLine());
+                Console.WriteLine("\tEnter your 3 favorite colors: ");
+                User.favcolors = new string[3];
+                for (int i = 0; i < User.favcolors.Length; i++)
+                {
+                    Console.Write("\t\t");
+                    User.favcolors[i] = Console.ReadLine();
+                }
+            }
+            */
+
+
+
 
 
             Console.WriteLine("\n");
