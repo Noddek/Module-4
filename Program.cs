@@ -1047,14 +1047,37 @@ namespace BasicConstructions
             var exampleOfTuple = (name: "Jane", age: 27);
             Console.WriteLine("\tYour name: {0} ({1})", exampleOfTuple.name, exampleOfTuple.Item1);
             Console.WriteLine("\tYour age: {0} ({1})", exampleOfTuple.age, exampleOfTuple.Item2);
+
+            Console.WriteLine("\nTask 4.4.2. A program for recording user's personal information in tuple anketa. [COMMENTED]");
+            /*
             (string name, int age) anketa;
-            Console.WriteLine("\nTask 4.4.2. A program for recording user's personal information in tuple anketa.");
             Console.Write("\tEnter you name: ");
             anketa.name = Console.ReadLine();
             Console.Write("\tEnter you age: ");
             anketa.age = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("\tRecorded data: name '{0}', age '{1}'.", anketa.name, anketa.age);
-            
+            */
+
+            Console.WriteLine("\nExample of a tuple without a name.");
+            var (exampleName, exampleAge) = ("Robert", 31);
+            Console.WriteLine("\tYour name: {0}", exampleName);
+            Console.WriteLine("\tYour age: {0}", exampleAge);
+
+            Console.WriteLine("Task 4.4.3. A program with a tuple without a name. [COMMENTED]");
+            /*
+            var (name, age) = ("Rob", 51);
+            Console.WriteLine("\tMy name: {0}", name);
+            Console.WriteLine("\tMy age: {0}", age);
+            Console.Write("\tEnter you name: ");
+            name = Console.ReadLine();
+            Console.Write("\tEnter you age: ");
+            age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\tYour name: {0}", name);
+            Console.WriteLine("\tYour age: {0}", age);
+            */
+
+
+
 
 
             Console.WriteLine("\n");
