@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System.Diagnostics.Metrics;
 using System.Net.WebSockets;
+using System.Xml.Linq;
 using static System.Collections.Specialized.BitVector32;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -1076,7 +1077,26 @@ namespace BasicConstructions
             Console.WriteLine("\tYour age: {0}", age);
             */
 
-
+            Console.WriteLine("Tasks 4.4.4 and 4.4.5. A tuple for pet. [COMMENTED]");
+            /*
+            // (string Name, string Type, double Age) Pet; -> Task 4.4.4.
+            (string Name, string Type, double Age, int NameCount) Pet;
+            Console.Write("\tEnter the pet's name: ");
+            Pet.Name = Console.ReadLine();
+            Console.Write("\tEnter the pet's type: ");
+            Pet.Type = Console.ReadLine();
+            Console.Write("\tEnter the pet's age: ");
+            Pet.Age = Convert.ToDouble(Console.ReadLine());
+            //SF variant: Pet.Age = double.Parse(Console.ReadLine());
+            Pet.NameCount = 0;
+            foreach (var letter in Pet.Name)
+            { Pet.NameCount++; }
+            //SF variant: Pet.NameCount = Pet.Name.Length;
+            Console.WriteLine("\tPet's name: {0}", Pet.Name);
+            Console.WriteLine("\tPet's type: {0}", Pet.Type);
+            Console.WriteLine("\tPet's age: {0}", Pet.Age);
+            Console.WriteLine("\tThe length of the pet's name: {0}", Pet.NameCount);
+            */
 
 
 
