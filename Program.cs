@@ -18,7 +18,7 @@ namespace BasicConstructions
             var hispeares = 5;
             var result = (myapples != hispeares) & (myapples < hisapples);
             Console.WriteLine("\t" + result);
-
+            
             Console.WriteLine("\nFinding out if it's winter or not:");
             int currentDayInYear = 293;
             bool isLeapYear = false;
@@ -27,13 +27,13 @@ namespace BasicConstructions
                 ||
                 (isLeapYear && (currentDayInYear >= 336 || currentDayInYear <= 60)); // The outer brackets can be removed
             Console.WriteLine("\tIs it winter? - {0}.", isWinter);
-
+            
             Console.WriteLine("\nTask 4.1.4. Comparing variables of string type.");
             string A1 = "";
             string B1 = "";
             bool C1 = (A1 != B1); // The outer brackets can be removed
             Console.WriteLine("\tIsn't A equal to B? - {0}.", C1);
-
+            
             Console.WriteLine("\nTask 4.1.5. Comparing variables of numeric types.");
             int A2 = 1, B2 = 2;
             double X2 = 3, Y2 = 4;
@@ -643,6 +643,8 @@ namespace BasicConstructions
             Console.WriteLine("\tThe length of array 'arr3': {0}", arr3.Length);
             Console.WriteLine("\tThe length of array 'arr4': {0}", arr4.Length);
 
+            Console.WriteLine("\n...Press any key to continue..."); Console.ReadKey();
+
             Console.WriteLine("\nSearch for a MIN in an array and display its value and index.");
             Random randomNumber = new Random();
             var numbers = new int[] { randomNumber.Next(1, 100), randomNumber.Next(1, 100), randomNumber.Next(1, 100), randomNumber.Next(1, 100), randomNumber.Next(1, 100), randomNumber.Next(1, 100) };
@@ -663,6 +665,8 @@ namespace BasicConstructions
                 }
             }
             Console.WriteLine("\tThe MIN element of the array has index {0} and its value is {1}.", minIndex, minValue);
+
+            Console.WriteLine("\n...Press any key to continue..."); Console.ReadKey();
 
             Console.WriteLine("\nAn example of spelling words out. [COMMENTED]");
             /*
@@ -744,6 +748,7 @@ namespace BasicConstructions
             Console.WriteLine("\tChecking the GetUpperBound(1) for 3D array: " + array3D.GetUpperBound(1));
             Console.WriteLine("\tChecking the GetUpperBound(2) for 3D array: " + array3D.GetUpperBound(2));
 
+            Console.WriteLine("\n...Press any key to continue..."); Console.ReadKey();
 
             // ----------------------> Task 4.3.12. My method. START.
 
@@ -854,14 +859,14 @@ namespace BasicConstructions
             }
             Console.WriteLine("\nUnsorted array length: " + arr.Length);
             int temp;
-            int totalInterations = 0;
+            int totalIterations = 0;
             for (int i = 0; i < arr.Length; i++)
             {
-                totalInterations++;
+                totalIterations++;
                 Console.WriteLine("\tIteration number: i = {0}", i);
                 for (int k = i + 1; k < arr.Length; k++)
                 {
-                    totalInterations++;
+                    totalIterations++;
                     Console.WriteLine("\t\tk = {0}", k);
                     if (arr[i] > arr[k])
                     {
@@ -883,7 +888,7 @@ namespace BasicConstructions
             {
                 Console.Write(item + " ");
             }
-            Console.WriteLine("\nTotal number of iterations: " + totalInterations);
+            Console.WriteLine("\nTotal number of iterations: " + totalIterations);
 
             // ----------------------> Task 4.3.12. SF method. END.
 
